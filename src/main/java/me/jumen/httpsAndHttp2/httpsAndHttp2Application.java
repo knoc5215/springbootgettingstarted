@@ -1,4 +1,4 @@
-package httpsAndHttp2;
+package me.jumen.httpsAndHttp2;
 
 import org.apache.catalina.connector.Connector;
 import org.springframework.boot.SpringApplication;
