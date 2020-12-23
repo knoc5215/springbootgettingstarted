@@ -12,4 +12,5 @@ public class ExternalConfigApplication {
         app.run(args);
     }
 
+
 }

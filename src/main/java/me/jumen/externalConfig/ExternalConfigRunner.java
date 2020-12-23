@@ -10,6 +10,9 @@ public class ExternalConfigRunner implements ApplicationRunner {
     @Autowired
     JumenProperties jumenProperties;        // type-safety
 
+    @Autowired
+    private String hello;
+
     @Override
     public void run(ApplicationArguments args) {
         System.out.println("========== external config test ==========");
@@ -18,6 +21,8 @@ public class ExternalConfigRunner implements ApplicationRunner {
         System.out.println(jumenProperties.getFullName());
         System.out.println(jumenProperties.getWorkPlace());
         System.out.println(jumenProperties.getSessionTimeout());
+
+        System.out.println(hello);
 
 
         System.out.println("========== external config test ==========");
