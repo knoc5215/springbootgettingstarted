@@ -1,5 +1,7 @@
 package me.jumen.externalConfig;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -7,6 +9,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ExternalConfigRunner implements ApplicationRunner {
+
+    private Logger logger = LoggerFactory.getLogger(ExternalConfigRunner.class);
+
     @Autowired
     JumenProperties jumenProperties;        // type-safety
 
@@ -15,17 +20,17 @@ public class ExternalConfigRunner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) {
-        System.out.println("========== external config test ==========");
-        System.out.println(jumenProperties.getName());
-        System.out.println(jumenProperties.getAge());
-        System.out.println(jumenProperties.getFullName());
-        System.out.println(jumenProperties.getWorkPlace());
-        System.out.println(jumenProperties.getSessionTimeout());
+        logger.debug("========== external config test ==========");
+        logger.debug(jumenProperties.getName());
+//        logger.info(jumenProperties.getAge());
+        logger.debug(jumenProperties.getFullName());
+        logger.debug(jumenProperties.getWorkPlace());
+//        logger.info(jumenProperties.getSessionTimeout());
 
-        System.out.println(hello);
+        logger.debug(hello);
 
 
-        System.out.println("========== external config test ==========");
+        logger.info("========== external config test ==========");
 
     }
 }
